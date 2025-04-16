@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<quiz>
+  
+  
+  
+  <question type="multichoice">
+    <name><text>機械学習の定義</text></name>
+    <questiontext><text>「機械学習」の説明として適切なのはどれか。
+</text></questiontext>
+    
+    <answer fraction="0">
+      <text>大量の計算を高速に実行する技術</text>
+      <feedback><text>これは計算機の性能に関する説明です。</text></feedback>
+    </answer>
+    
+    <answer fraction="100">
+      <text>データから自動的に規則性や知識を獲得する技術</text>
+      <feedback><text>正解です。これが機械学習の本質です。</text></feedback>
+    </answer>
+    
+    <answer fraction="0">
+      <text>人間の直感や常識を直接プログラムとして記述する技術</text>
+      <feedback><text>これはルールベースの手法に近い説明です。</text></feedback>
+    </answer>
+    
+    <answer fraction="0">
+      <text>大量の知識をルールとして手作業で登録する技術</text>
+      <feedback><text>これは第2次AIブームのエキスパートシステムです。</text></feedback>
+    </answer>
+    
+  </question>
+  
+  
+  
+  
+  
+  <question type="multichoice">
+    <name><text>ラベルの意味（難問）</text></name>
+    <questiontext><text>以下の学生の中で、「ラベル」の説明が唯一正しいのは誰か？
+</text></questiontext>
+    
+    <answer fraction="0">
+      <text>「ラベル」は必ずカテゴリー名で、数値予測には不適。</text>
+      <feedback><text></text></feedback>
+    </answer>
+    
+    <answer fraction="0">
+      <text>「ラベル」は予測される変数で、質的・量的どちらも含む。</text>
+      <feedback><text></text></feedback>
+    </answer>
+    
+    <answer fraction="0">
+      <text>「ラベル」は特徴量の一種で、入力データ。</text>
+      <feedback><text></text></feedback>
+    </answer>
+    
+    <answer fraction="0">
+      <text>「ラベル」は真の値で、誤差がない。</text>
+      <feedback><text></text></feedback>
+    </answer>
+    
+  </question>
+  
+  
+  
+</quiz>

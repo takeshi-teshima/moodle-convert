@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<quiz>
+  {% for quiz in quizzes %}
+  {% with class = quiz.__class__.__name__ %}
+  {% if class == 'MultiChoiceQuiz' %}
+  <question type="multichoice">
+    <name><text>{{ quiz.title }}</text></name>
+    <questiontext><text>{{ quiz.question }}</text></questiontext>
+    {% for key, text in quiz.choices.items() %}
+    <answer fraction="{{ '100' if key == quiz.answer else '0' }}">
+      <text>{{ text }}</text>
+      <feedback><text>{{ quiz.feedback.get(key, '') }}</text></feedback>
+    </answer>
+    {% endfor %}
+  </question>
+  {% elif class == 'YesNoQuiz' %}
+  <question type="yesno">
+    <name><text>{{ quiz.title }}</text></name>
+    <questiontext><text>{{ quiz.question }}</text></questiontext>
+    {% for val in ['true', 'false'] %}
+    <answer fraction="{{ '100' if val == quiz.answer.lower() else '0' }}">
+      <text>{{ val }}</text>
+      <feedback><text>{{ quiz.feedback.get(val, '') }}</text></feedback>
+    </answer>
+    {% endfor %}
+  </question>
+  {% endif %}
+  {% endwith %}
+  {% endfor %}
+</quiz>

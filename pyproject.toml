@@ -1,0 +1,22 @@
+[tool.poetry]
+name = "moodle-convert"
+version = "0.1.0"
+description = "A tool to convert among various Moodle-compatible formats."
+authors = ["Takeshi Teshima <takeshi.78.teshima@gmail.com>"]
+license = "Apache-2.0"
+packages = [
+    { include = "src", from = "." }
+]
+
+[tool.poetry.dependencies]
+python = "^3.8"
+pyyaml = "^6.0.2"
+click = "^8.1.8"
+jinja2 = "^3.1.6"
+
+[tool.poetry.scripts]
+moodle-convert = "src.main:moodle_convert"
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
