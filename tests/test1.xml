@@ -1,8 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <quiz>
-  
-  
-  
   <question type="multichoice">
     <name><text>機械学習の定義</text></name>
     <questiontext><text>「機械学習」の説明として適切なのはどれか。
@@ -28,13 +25,7 @@
       <feedback><text>これは第2次AIブームのエキスパートシステムです。</text></feedback>
     </answer>
     
-  </question>
-  
-  
-  
-  
-  
-  <question type="multichoice">
+  </question><question type="multichoice">
     <name><text>ラベルの意味（難問）</text></name>
     <questiontext><text>以下の学生の中で、「ラベル」の説明が唯一正しいのは誰か？
 </text></questiontext>
@@ -60,7 +51,4 @@
     </answer>
     
   </question>
-  
-  
-  
 </quiz>

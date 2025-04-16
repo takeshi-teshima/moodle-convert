@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <quiz>
   {% for quiz in quizzes %}
-  {% with class = quiz.__class__.__name__ %}
-  {% if class == 'MultiChoiceQuiz' %}
+  {%- with class = quiz.__class__.__name__ -%}
+  {%- if class == 'MultiChoiceQuiz' -%}
   <question type="multichoice">
     <name><text>{{ quiz.title }}</text></name>
     <questiontext><text>{{ quiz.question }}</text></questiontext>
@@ -13,7 +13,7 @@
     </answer>
     {% endfor %}
   </question>
-  {% elif class == 'YesNoQuiz' %}
+  {%- elif class == 'YesNoQuiz' -%}
   <question type="yesno">
     <name><text>{{ quiz.title }}</text></name>
     <questiontext><text>{{ quiz.question }}</text></questiontext>
@@ -24,7 +24,7 @@
     </answer>
     {% endfor %}
   </question>
-  {% endif %}
-  {% endwith %}
+  {%- endif -%}
+  {%- endwith -%}
   {% endfor %}
 </quiz>
