@@ -17,10 +17,10 @@
   <question type="yesno">
     <name><text>{{ quiz.title }}</text></name>
     <questiontext><text>{{ quiz.question }}</text></questiontext>
-    {% for val in ['true', 'false'] %}
-    <answer fraction="{{ '100' if val == quiz.answer.lower() else '0' }}">
-      <text>{{ val }}</text>
-      <feedback><text>{{ quiz.feedback.get(val, '') }}</text></feedback>
+    {% for val in [true, false] %}
+    <answer fraction="{{ '100' if val == quiz.answer else '0' }}">
+      <text>{{ 'Yes' if val else 'No' }}</text>
+      <feedback><text>{{ quiz.feedback.get(true if val else false, '') }}</text></feedback>
     </answer>
     {% endfor %}
   </question>
