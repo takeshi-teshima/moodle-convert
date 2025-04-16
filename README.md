@@ -27,17 +27,17 @@ OPTIONS include:
 
 ## Supported Input Formats
 
-| Format      | Description                |
-|-------------|----------------------------|
-| YAML        | Human-readable format for defining quizzes. |
+| Format      | Description                | multichoice | yesno |
+|-------------|----------------------------|-------------|-------|
+| YAML        | Human-readable format for defining quizzes. | ✓           | ✓     |
 
 This tool currently supports YAML as the input format for Moodle quizzes.
 
 ## Supported Output Formats
 
-| Format      | Description                |
-|-------------|----------------------------|
-| XML         | Moodle-compatible XML format for quizzes. |
+| Format      | Description                | multichoice | yesno |
+|-------------|----------------------------|-------------|-------|
+| XML         | Moodle-compatible XML format for quizzes. | ✓           | ✓     |
 
 The output format is XML, which is compatible with Moodle's quiz import functionality.
 
