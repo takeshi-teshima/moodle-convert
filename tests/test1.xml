@@ -50,7 +50,7 @@
       <feedback><text></text></feedback>
     </answer>
     
-  </question><question type="yesno">
+  </question><question type="truefalse">
     <name><text>002-特徴量変換の概念</text></name>
     <questiontext><text>特徴量変換（feature map）は入力データを新たな特徴空間に写像する関数のことである。
 </text></questiontext>

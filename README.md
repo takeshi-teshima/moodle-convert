@@ -1,6 +1,10 @@
 # moodle-convert
 A pandoc-wannabe converter for various moodle quiz formats
 
+## Description
+This tool is designed to convert Moodle quiz formats from YAML to XML. It provides a simple command-line interface for converting quizzes, making it easy to import them into Moodle.
+[Moodle XML](https://docs.moodle.org/500/en/Moodle_XML_format)
+
 ## Installation
 
 ```bash
@@ -27,7 +31,7 @@ OPTIONS include:
 
 ## Supported Input Formats
 
-| Format      | Description                | multichoice | yesno |
+| Format      | Description                | multichoice | truefalse |
 |-------------|----------------------------|-------------|-------|
 | YAML        | Human-readable format for defining quizzes. | ✓           | ✓     |
 
@@ -35,7 +39,7 @@ This tool currently supports YAML as the input format for Moodle quizzes.
 
 ## Supported Output Formats
 
-| Format      | Description                | multichoice | yesno |
+| Format      | Description                | multichoice | truefalse |
 |-------------|----------------------------|-------------|-------|
 | XML         | Moodle-compatible XML format for quizzes. | ✓           | ✓     |
 
@@ -58,7 +62,7 @@ Here is an example of a YAML file that can be converted using this tool:
     A: "Correct! Paris is the capital of France."
     B: "Incorrect. London is not the capital of France."
     C: "Incorrect. Berlin is not the capital of France."
-- type: yesno
+- type: truefalse
   question: "The Earth is flat."
   answer: false
   feedback:

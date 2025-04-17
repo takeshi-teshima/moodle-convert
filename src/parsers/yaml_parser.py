@@ -1,9 +1,9 @@
 import yaml
 from src.quiz_types.multichoice import MultiChoiceQuiz
-from src.quiz_types.yesno import YesNoQuiz
+from src.quiz_types.truefalse import TrueFalseQuiz
 
 QUIZ_TYPE_CLASSES = {
-    "yesno": YesNoQuiz,
+    "truefalse": TrueFalseQuiz,
     "multichoice": MultiChoiceQuiz,
 }
 

@@ -13,8 +13,8 @@
     </answer>
     {% endfor %}
   </question>
-  {%- elif class == 'YesNoQuiz' -%}
-  <question type="yesno">
+  {%- elif class == 'TrueFalseQuiz' -%}
+  <question type="truefalse">
     <name><text>{{ quiz.title }}</text></name>
     <questiontext><text>{{ quiz.question }}</text></questiontext>
     {% for val in [true, false] %}
