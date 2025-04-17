@@ -5,6 +5,19 @@ A pandoc-wannabe converter for various moodle quiz formats
 This tool is designed to convert Moodle quiz formats from YAML to XML. It provides a simple command-line interface for converting quizzes, making it easy to import them into Moodle.
 [Moodle XML](https://docs.moodle.org/500/en/Moodle_XML_format)
 
+## Quiz Type Support
+
+| Quiz Type     | Supported | Planned | Currently Not Planned |
+|---------------|-----------|---------|-----------------------|
+| multichoice   | ✓         |         |                       |
+| truefalse     | ✓         |         |                       |
+| shortanswer   |           |         | ✓                     |
+| matching      |           | ✓       |                       |
+| cloze         |           |         | ✓                     |
+| essay         |           |         | ✓                     |
+| numerical     |           | ✓       |                       |
+| description   |           |         | ✓                     |
+
 ## Installation
 
 ```bash
