@@ -19,7 +19,7 @@
     <questiontext><text>{{ quiz.question }}</text></questiontext>
     {% for val in [true, false] %}
     <answer fraction="{{ '100' if val == quiz.answer else '0' }}">
-      <text>{{ val }}</text>
+      <text>{{ 'true' if val else 'false' }}</text>
       <feedback><text>{{ quiz.feedback.get(true if val else false, '') }}</text></feedback>
     </answer>
     {% endfor %}
