@@ -1,28 +1,25 @@
-#Quiz: {
-	rubric:   string & != ""
-	type:     "multichoice" | "truefalse"
-	title:    string & != ""
-	question: string & != ""
+#CommonTraits: {
+	title!: string,
+	rubric?: string,
+	...
+}
 
-	if type == "multichoice" {
-		choices: {
-			A: string & != ""
-			B: string & != ""
-			...string & != ""
-		}
-		answer: string & or([ for k, _ in choices { k } ])
-		feedback: {
-			(k): string & != "" for k, _ in choices
-		}
-	}
+#MultiChoiceQuiz: #CommonTraits & {
+	type:     "multichoice",
+	question!: string,
+	choices!: { [=~"^[A-Z]$"]: string},
+	answer!: string & or([ for k, v in choices { k } ]),
+	feedback?: {	for k, v in choices { (k)?: string } },
+}
 
-	if type == "truefalse" {
-		answer: bool
-		feedback: {
-			true:  string & != ""
-			false: string & != ""
-		}
+#TrueFalseQuiz: #CommonTraits & {
+	type: "truefalse",
+	question!: string,
+	answer!: bool,
+	feedback?: {
+		true?:  string,
+		false?: string,
 	}
 }
 
-Quizzes: [...#Quiz]
+Quizzes: [...(#MultiChoiceQuiz | #TrueFalseQuiz)]

@@ -15,13 +15,15 @@ def validate_yaml(yaml_file):
     """
     # cueコマンドが存在するか確認
     if shutil.which("cue") is None:
-        click.echo("Error: 'cue' command not found. Please install it using a package manager like brew.")
+        click.echo(
+            "Error: 'cue' command not found. Please install it using a package manager like brew."
+        )
         return
 
     try:
         # subprocessでcue vetを実行
         result = subprocess.run(
-            ["cue", "vet", str(yaml_file), str(CUE_SCHEMA_PATH)],
+            ["cue", "vet", "-c", str(CUE_SCHEMA_PATH), str(yaml_file)],
             check=True,
             text=True,
             capture_output=True,
