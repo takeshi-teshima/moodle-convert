@@ -21,13 +21,13 @@ This tool is designed to convert Moodle quiz formats from YAML to XML. It provid
 ## Installation
 
 ```bash
-$ pip install git+https://github.com/takeshi-teshima/moodle-convert.git
+pip install git+https://github.com/takeshi-teshima/moodle-convert.git
 ```
 
 If you also want to use the validation tool, install it with:
 
 ```bash
-$ brew install cue
+brew install cue
 ```
 
 ## Usage
@@ -73,26 +73,7 @@ The output format is XML, which is compatible with Moodle's quiz import function
 
 Here is an example of a YAML file that can be converted using this tool:
 
-```yaml
-- type: multichoice
-  question: |
-    What is the capital of France?
-  choices:
-    A: "Paris"
-    B: "London"
-    C: "Berlin"
-  answer: A
-  feedback:
-    A: "Correct! Paris is the capital of France."
-    B: "Incorrect. London is not the capital of France."
-    C: "Incorrect. Berlin is not the capital of France."
-- type: truefalse
-  question: "The Earth is flat."
-  answer: false
-  feedback:
-    true: "Incorrect. The Earth is not flat."
-    false: "Correct! The Earth is not flat."
-```
+- [./examples/example.yaml](./examples/example.yaml)
 
 ## Contributing
 
