@@ -21,13 +21,18 @@ This tool is designed to convert Moodle quiz formats from YAML to XML. It provid
 ## Installation
 
 ```bash
-$ <git clone this repo>
-$ poetry install
-$ poetry run moodle-convert --help
+$ pip install git+https://github.com/takeshi-teshima/moodle-convert.git
+```
+
+If you also want to use the validation tool, install it with:
+
+```bash
+$ brew install cue
 ```
 
 ## Usage
 
+### Convert YAML to XML
 ```
 moodle-convert <INPUT.yaml> [OPTIONS]
 ```
@@ -35,6 +40,12 @@ moodle-convert <INPUT.yaml> [OPTIONS]
 OPTIONS include:
 - `--output-format`: Output format. Default is `xml`.
 - `--output`: Output filename. Default is the input filename with the extension of the output format appended.
+
+### Check YAML Format Validity
+```
+$ moodle-convert-validate <INPUT.yaml>
+```
+
 
 ## Features
 
