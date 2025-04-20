@@ -14,7 +14,7 @@ def parse_yaml_file(file_path: str):
         data = yaml.safe_load(file)
 
     quizzes = []
-    for quiz_data in data:
+    for quiz_data in data["Quizzes"]:
         quiz_type = quiz_data.get("type")
         if quiz_type not in QUIZ_TYPE_CLASSES:
             raise ValueError(f"Unsupported quiz type: {quiz_type}")

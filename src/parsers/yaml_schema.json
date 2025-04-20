@@ -1,0 +1,62 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Quizzes",
+  "type": "array",
+  "items": {
+    "type": "object",
+    "required": ["rubric", "type", "title", "question", "answer", "feedback"],
+    "properties": {
+      "rubric": { "type": "string", "minLength": 1 },
+      "type": { "type": "string", "enum": ["multichoice", "truefalse"] },
+      "title": { "type": "string", "minLength": 1 },
+      "question": { "type": "string", "minLength": 1 },
+      "choices": {
+        "type": "object",
+        "minProperties": 2,
+        "additionalProperties": { "type": "string", "minLength": 1 }
+      },
+      "answer": {},
+      "feedback": { "type": "object" }
+    },
+    "allOf": [
+      {
+        "if": { "properties": { "type": { "const": "multichoice" } } },
+        "then": {
+          "required": ["choices", "answer", "feedback"],
+          "properties": {
+            "choices": {
+              "type": "object",
+              "minProperties": 2,
+              "additionalProperties": { "type": "string", "minLength": 1 }
+            },
+            "answer": { "type": "string" },
+            "feedback": {
+              "type": "object",
+              "minProperties": 2,
+              "additionalProperties": { "type": "string", "minLength": 1 }
+            }
+          }
+        }
+      },
+      {
+        "if": { "properties": { "type": { "const": "truefalse" } } },
+        "then": {
+          "required": ["answer", "feedback"],
+          "properties": {
+            "answer": { "type": "boolean" },
+            "feedback": {
+              "type": "object",
+              "required": ["true", "false"],
+              "properties": {
+                "true": { "type": "string", "minLength": 1 },
+                "false": { "type": "string", "minLength": 1 }
+              },
+              "additionalProperties": false
+            }
+          }
+        }
+      }
+    ],
+    "additionalProperties": false
+  }
+}

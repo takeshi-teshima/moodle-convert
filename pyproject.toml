@@ -16,6 +16,7 @@ jinja2 = "^3.1.6"
 
 [tool.poetry.scripts]
 moodle-convert = "src.main:moodle_convert"
+moodle-convert-validate = "src.parsers.yaml_validator:validate_yaml"
 
 [build-system]
 requires = ["poetry-core>=1.0.0"]
