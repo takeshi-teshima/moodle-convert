@@ -46,6 +46,10 @@ OPTIONS include:
 $ moodle-convert-validate <INPUT.yaml>
 ```
 
+### Output template YAML
+```
+$ moodle-convert-scaffold >> <OUTPUT.yaml>
+```
 
 ## Features
 

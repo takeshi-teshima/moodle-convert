@@ -1,0 +1,27 @@
+Quizzes:
+  - rubric:
+    type: multichoice
+    title:
+    question: >
+      
+    choices:
+      A: 
+      B: 
+      C: 
+      D: 
+    answer: 
+    feedback:
+      A: 
+      B: 
+      C: 
+      D: 
+
+  - rubric: 
+    type: truefalse
+    title: 
+    question: >
+      
+    answer:
+    feedback:
+      true: 
+      false: 

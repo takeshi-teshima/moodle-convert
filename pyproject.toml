@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "moodle-convert"
-version = "0.1.2"
+version = "0.1.3"
 description = "A tool to convert among various Moodle-compatible formats."
 authors = ["Takeshi Teshima <takeshi.78.teshima@gmail.com>"]
 license = "Apache-2.0"
@@ -16,6 +16,7 @@ jinja2 = "^3.1.6"
 
 [tool.poetry.scripts]
 moodle-convert = "src.main:moodle_convert"
+moodle-convert-scaffold = "src.main:moodle_convert_scaffold"
 moodle-convert-validate = "src.parsers.yaml_validator:validate_yaml"
 
 [build-system]

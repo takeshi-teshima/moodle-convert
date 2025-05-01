@@ -3,6 +3,7 @@ from pathlib import Path
 import click
 from jinja2 import Environment, FileSystemLoader
 from src.parsers.yaml_parser import parse_yaml_file
+import importlib.resources
 
 
 # Initialize Jinja2 environment
@@ -49,6 +50,16 @@ def moodle_convert(input_file, output, output_format):
         output_file.write(output_content)
 
     click.echo(f"Converted {len(quizzes)} quizzes to {output_format.upper()} format.")
+
+
+@click.command()
+def moodle_convert_scaffold():
+    """
+    Print the contents of templates/scaffold.yaml to stdout.
+    """
+    scaffold_resource = importlib.resources.files("src.templates") / "scaffold.yaml"
+    with scaffold_resource.open("r", encoding="utf-8") as f:
+        click.echo(f.read(), nl=False)
 
 
 if __name__ == "__main__":
