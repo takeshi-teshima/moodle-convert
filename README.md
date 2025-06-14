@@ -65,6 +65,9 @@ $ moodle-convert-scaffold >> <OUTPUT.yaml>
 
 This tool currently supports YAML as the input format for Moodle quizzes.
 
+The accepted quiztext formats are: `markdown`, `html`, `moodle_auto_format` and `plain_text`.
+The list is defined in [src/parsers/yaml_schema.cue](src/parsers/yaml_schema.cue).
+
 ## Supported Output Formats
 
 | Format      | Description                | multichoice | truefalse |
