@@ -9,7 +9,7 @@
     {% for key, text in quiz.choices.items() %}
     <answer fraction="{{ '100' if key == quiz.answer else '0' }}">
       <text>{{ text }}</text>
-      <feedback><text>{{ quiz.feedback.get(key, '') }}</text></feedback>
+      <feedback format="{{ config.format }}"><text>{{ quiz.feedback.get(key, '') }}</text></feedback>
     </answer>
     {% endfor %}
   </question>
@@ -20,7 +20,7 @@
     {% for val in [true, false] %}
     <answer fraction="{{ '100' if val == quiz.answer else '0' }}">
       <text>{{ 'true' if val else 'false' }}</text>
-      <feedback><text>{{ quiz.feedback.get(true if val else false, '') }}</text></feedback>
+      <feedback format="{{ config.format }}"><text>{{ quiz.feedback.get(true if val else false, '') }}</text></feedback>
     </answer>
     {% endfor %}
   </question>
