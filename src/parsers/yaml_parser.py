@@ -22,4 +22,4 @@ def parse_yaml_file(file_path: str):
         quiz_class = QUIZ_TYPE_CLASSES[quiz_type]
         quizzes.append(quiz_class.from_parsed_yaml(quiz_data))
 
-    return quizzes
+    return dict(quizzes=quizzes, config=data.get("config", {"format": "markdown"}))

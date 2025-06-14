@@ -5,7 +5,7 @@
   {%- if class == 'MultiChoiceQuiz' -%}
   <question type="multichoice">
     <name><text>{{ quiz.title }}</text></name>
-    <questiontext><text>{{ quiz.question }}</text></questiontext>
+    <questiontext format="{{ config.format }}"><text>{{ quiz.question }}</text></questiontext>
     {% for key, text in quiz.choices.items() %}
     <answer fraction="{{ '100' if key == quiz.answer else '0' }}">
       <text>{{ text }}</text>
@@ -16,7 +16,7 @@
   {%- elif class == 'TrueFalseQuiz' -%}
   <question type="truefalse">
     <name><text>{{ quiz.title }}</text></name>
-    <questiontext><text>{{ quiz.question }}</text></questiontext>
+    <questiontext format="{{ config.format }}"><text>{{ quiz.question }}</text></questiontext>
     {% for val in [true, false] %}
     <answer fraction="{{ '100' if val == quiz.answer else '0' }}">
       <text>{{ 'true' if val else 'false' }}</text>

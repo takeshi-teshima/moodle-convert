@@ -23,3 +23,7 @@
 }
 
 Quizzes: [...(#MultiChoiceQuiz | #TrueFalseQuiz)]
+
+#config: {
+	format: "html" | "moodle_auto_format" | "plain_text" | "markdown",
+}

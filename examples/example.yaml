@@ -1,3 +1,5 @@
+config:
+  format: markdown
 Quizzes:
   - type: multichoice
     title: 機械学習の定義

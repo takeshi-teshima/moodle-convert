@@ -36,12 +36,12 @@ def moodle_convert(input_file, output, output_format):
         output_path = input_path.with_suffix(OUTPUT_FORMAT_EXTENSIONS[output_format])
 
     # Parse the input YAML file
-    quizzes = parse_yaml_file(input_path)
+    parsed = parse_yaml_file(input_path)
 
     # Handle output format
     if output_format == "xml":
         template = env.get_template("quiz_template.xml")
-        output_content = template.render(quizzes=quizzes)
+        output_content = template.render(**parsed)
     else:
         raise ValueError(f"Unsupported output format: {output_format}")
 
@@ -49,7 +49,7 @@ def moodle_convert(input_file, output, output_format):
     with output_path.open("w", encoding="utf-8") as output_file:
         output_file.write(output_content)
 
-    click.echo(f"Converted {len(quizzes)} quizzes to {output_format.upper()} format.")
+    click.echo(f"Converted {len(parsed["quizzes"])} quizzes to {output_format.upper()} format.")
 
 
 @click.command()
