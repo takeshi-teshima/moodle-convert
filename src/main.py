@@ -49,7 +49,8 @@ def moodle_convert(input_file, output, output_format):
     with output_path.open("w", encoding="utf-8") as output_file:
         output_file.write(output_content)
 
-    click.echo(f"Converted {len(parsed["quizzes"])} quizzes to {output_format.upper()} format.")
+    n_quizzes = len(parsed["quizzes"])
+    click.echo(f"Converted {n_quizzes} quizzes to {output_format.upper()} format.")
 
 
 @click.command()

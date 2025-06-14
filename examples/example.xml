@@ -2,7 +2,7 @@
 <quiz>
   <question type="multichoice">
     <name><text>機械学習の定義</text></name>
-    <questiontext><text>「機械学習」の説明として適切なのはどれか。
+    <questiontext format="markdown"><text>「機械学習」の説明として適切なのはどれか。
 </text></questiontext>
     
     <answer fraction="0">
@@ -27,41 +27,41 @@
     
   </question><question type="multichoice">
     <name><text>ラベルの意味（難問）</text></name>
-    <questiontext><text>以下の学生の中で、「ラベル」の説明が唯一正しいのは誰か？
+    <questiontext format="markdown"><text>以下の学生の中で、「ラベル」の説明が唯一正しいのは誰か？
 </text></questiontext>
     
     <answer fraction="0">
-      <text>「ラベル」は必ずカテゴリー名で、数値予測には不適。</text>
-      <feedback><text></text></feedback>
+      <text>Aさん 「ラベル」は必ずカテゴリー名で、数値予測には不適。</text>
+      <feedback><text>数値予測にもラベルは使われます。</text></feedback>
+    </answer>
+    
+    <answer fraction="100">
+      <text>Bさん 「ラベル」は予測される変数で、質的・量的どちらも含む。</text>
+      <feedback><text>正解です。ラベルとは予測対象変数のことです。</text></feedback>
     </answer>
     
     <answer fraction="0">
-      <text>「ラベル」は予測される変数で、質的・量的どちらも含む。</text>
-      <feedback><text></text></feedback>
+      <text>Cさん 「ラベル」は特徴量の一種で、入力データ。</text>
+      <feedback><text>特徴量とラベルを混同しています。</text></feedback>
     </answer>
     
     <answer fraction="0">
-      <text>「ラベル」は特徴量の一種で、入力データ。</text>
-      <feedback><text></text></feedback>
-    </answer>
-    
-    <answer fraction="0">
-      <text>「ラベル」は真の値で、誤差がない。</text>
-      <feedback><text></text></feedback>
+      <text>Dさん 「ラベル」は真の値で、誤差がない。</text>
+      <feedback><text>ラベルは観測値であり、誤差も含むことがあります。</text></feedback>
     </answer>
     
   </question><question type="truefalse">
     <name><text>002-特徴量変換の概念</text></name>
-    <questiontext><text>特徴量変換（feature map）は入力データを新たな特徴空間に写像する関数のことである。
+    <questiontext format="markdown"><text>特徴量変換（feature map）は入力データを新たな特徴空間に写像する関数のことである。
 </text></questiontext>
     
     <answer fraction="100">
-      <text>Yes</text>
+      <text>true</text>
       <feedback><text>正解です。</text></feedback>
     </answer>
     
     <answer fraction="0">
-      <text>No</text>
+      <text>false</text>
       <feedback><text>特徴量変換は新たな特徴空間への写像です。</text></feedback>
     </answer>
     
