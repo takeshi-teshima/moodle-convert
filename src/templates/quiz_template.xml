@@ -2,25 +2,25 @@
 <quiz>
   {% for quiz in quizzes %}
   {%- with class = quiz.__class__.__name__ -%}
-  {% if class == 'MultiChoiceQuiz' -%}
+  {% if class == 'MultiChoiceQuiz' %}
   <question type="multichoice">
-    <name><text>{{ quiz.title }}</text></name>
-    <questiontext format="{{ config.format }}"><text>{{ quiz.question }}</text></questiontext>
+    <name><text>{{ quiz.title|custom_escape }}</text></name>
+    <questiontext format="{{ config.format }}"><text>{{ quiz.question|custom_escape }}</text></questiontext>
     {% for key, text in quiz.choices.items() %}
     <answer fraction="{{ '100' if key == quiz.answer else '0' }}">
-      <text>{{ text }}</text>
-      <feedback format="{{ config.format }}"><text>{{ quiz.feedback.get(key, '') }}</text></feedback>
+      <text>{{ text|custom_escape }}</text>
+      <feedback format="{{ config.format }}"><text>{{ quiz.feedback.get(key, '')|custom_escape }}</text></feedback>
     </answer>
     {% endfor %}
   </question>
-  {% elif class == 'TrueFalseQuiz' -%}
+  {% elif class == 'TrueFalseQuiz' %}
   <question type="truefalse">
-    <name><text>{{ quiz.title }}</text></name>
-    <questiontext format="{{ config.format }}"><text>{{ quiz.question }}</text></questiontext>
+    <name><text>{{ quiz.title|custom_escape }}</text></name>
+    <questiontext format="{{ config.format }}"><text>{{ quiz.question|custom_escape }}</text></questiontext>
     {% for val in [true, false] %}
     <answer fraction="{{ '100' if val == quiz.answer else '0' }}">
-      <text>{{ 'true' if val else 'false' }}</text>
-      <feedback format="{{ config.format }}"><text>{{ quiz.feedback.get(true if val else false, '') }}</text></feedback>
+      <text>{{ ('true' if val else 'false') }}</text>
+      <feedback format="{{ config.format }}"><text>{{ quiz.feedback.get(true if val else false, '')|custom_escape }}</text></feedback>
     </answer>
     {% endfor %}
   </question>

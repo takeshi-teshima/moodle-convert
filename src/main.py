@@ -1,7 +1,8 @@
 # -*- coding: utf-8 -*-
 from pathlib import Path
 import click
-from jinja2 import Environment, FileSystemLoader
+from jinja2 import Environment, FileSystemLoader, pass_context
+import html
 from src.parsers.yaml_parser import parse_yaml_file
 import importlib.resources
 
@@ -9,6 +10,20 @@ import importlib.resources
 # Initialize Jinja2 environment
 TEMPLATES_DIR = Path(__file__).parent / "templates"
 env = Environment(loader=FileSystemLoader(TEMPLATES_DIR))
+
+
+def custom_escape(context, value):
+    config = context.get("config", {})
+    if config.get("html_escape"):
+        if value is None:
+            return ""
+        escaped = html.escape(str(value))
+        return escaped.replace("\\", "\\\\")
+    else:
+        return value if value is not None else ""
+
+
+env.filters["custom_escape"] = pass_context(custom_escape)
 
 OUTPUT_FORMAT_EXTENSIONS = {
     "xml": ".xml",
