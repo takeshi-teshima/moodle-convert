@@ -14,7 +14,7 @@ env = Environment(loader=FileSystemLoader(TEMPLATES_DIR))
 
 def custom_escape(context, value):
     config = context.get("config", {})
-    if config.get("html_escape"):
+    if config.get("html_escape", True):
         if value is None:
             return ""
         escaped = html.escape(str(value))
