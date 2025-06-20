@@ -2,7 +2,7 @@
 <quiz>
   {% for quiz in quizzes %}
   {%- with class = quiz.__class__.__name__ -%}
-  {%- if class == 'MultiChoiceQuiz' -%}
+  {% if class == 'MultiChoiceQuiz' -%}
   <question type="multichoice">
     <name><text>{{ quiz.title }}</text></name>
     <questiontext format="{{ config.format }}"><text>{{ quiz.question }}</text></questiontext>
@@ -13,7 +13,7 @@
     </answer>
     {% endfor %}
   </question>
-  {%- elif class == 'TrueFalseQuiz' -%}
+  {% elif class == 'TrueFalseQuiz' -%}
   <question type="truefalse">
     <name><text>{{ quiz.title }}</text></name>
     <questiontext format="{{ config.format }}"><text>{{ quiz.question }}</text></questiontext>
