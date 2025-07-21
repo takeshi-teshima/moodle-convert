@@ -26,7 +26,7 @@
       <feedback format="markdown"><text>これは第2次AIブームのエキスパートシステムです。</text></feedback>
     </answer>
     
-    <single>false</single><shuffleanswers>1</shuffleanswers>
+    <single>true</single><shuffleanswers>1</shuffleanswers>
     <generalfeedback format="markdown"><text></text></generalfeedback>
     <answernumbering>None</answernumbering>
   </question>
