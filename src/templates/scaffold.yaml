@@ -1,5 +1,7 @@
 config:
   format: markdown
+  multichoice:
+    shuffle: true
 
 Quizzes:
   - rubric:
@@ -12,12 +14,14 @@ Quizzes:
       B: 
       C: 
       D: 
+    shuffle: true
     answer: 
     feedback:
       A: 
       B: 
       C: 
       D: 
+    general_feedback:
 
   - rubric: 
     type: truefalse
@@ -28,3 +32,4 @@ Quizzes:
     feedback:
       true: 
       false: 
+    general_feedback:

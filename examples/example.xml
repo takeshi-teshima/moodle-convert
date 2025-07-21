@@ -26,6 +26,10 @@
       <feedback format="markdown"><text>これは第2次AIブームのエキスパートシステムです。</text></feedback>
     </answer>
     
+    <single>false</single>
+    
+    <shuffleanswers>1</shuffleanswers>
+    <generalfeedback format="markdown"><text></text></generalfeedback>
   </question>
   
   <question type="multichoice">
@@ -53,6 +57,10 @@
       <feedback format="markdown"><text>ラベルは観測値であり、誤差も含むことがあります。</text></feedback>
     </answer>
     
+    <single>false</single>
+    
+    <shuffleanswers>0</shuffleanswers>
+    <generalfeedback format="markdown"><text></text></generalfeedback>
   </question>
   
   <question type="truefalse">
@@ -70,5 +78,6 @@
       <feedback format="markdown"><text>特徴量変換は新たな特徴空間への写像です。</text></feedback>
     </answer>
     
+    <generalfeedback format="markdown"><text></text></generalfeedback>
   </question>
 </quiz>

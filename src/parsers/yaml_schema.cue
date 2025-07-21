@@ -1,6 +1,7 @@
 #CommonTraits: {
 	title!: string,
 	rubric?: string,
+	general_feedback?: string,
 	...
 }
 
@@ -9,7 +10,9 @@
 	question!: string,
 	choices!: { [=~"^[A-Z]$"]: string},
 	answer!: string & or([ for k, v in choices { k } ]),
-	feedback?: {	for k, v in choices { (k)?: string } },
+	feedback?: { for k, v in choices { (k)?: string } },
+	shuffle?: *false | bool,
+	single?: *true | bool  // true for single choice, false for multiple choices
 }
 
 #TrueFalseQuiz: #CommonTraits & {
@@ -25,6 +28,9 @@
 Quizzes: [...(#MultiChoiceQuiz | #TrueFalseQuiz)]
 
 #config: {
-	format: "html" | "moodle_auto_format" | "plain_text" | "markdown",
-	html_escape?: bool
+	format: "markdown" | "html" | "moodle_auto_format" | "plain_text",
+	html_escape?: *true | bool,
+	multichoice?: {
+		shuffle?: *false | bool
+	}
 }

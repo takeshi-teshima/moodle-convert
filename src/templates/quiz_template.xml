@@ -1,3 +1,4 @@
+{%- set multichoice_shuffle_default = config.get('multichoice', {}).get('shuffle', false) -%}
 <?xml version="1.0" encoding="UTF-8"?>
 <quiz>
   {% for quiz in quizzes %}
@@ -12,6 +13,10 @@
       <feedback format="{{ config.format }}"><text>{{ quiz.feedback.get(key, '')|custom_escape }}</text></feedback>
     </answer>
     {% endfor %}
+    <single>{{ 'true' if ((quiz.single is defined) and quiz.single) else 'false' }}</single>
+    {% set shuffle = quiz.shuffle if (quiz.shuffle is defined) and (quiz.shuffle is not none) else multichoice_shuffle_default %}
+    <shuffleanswers>{{ '1' if shuffle else '0' }}</shuffleanswers>
+    <generalfeedback format="{{ config.format }}"><text>{{ quiz.general_feedback|custom_escape }}</text></generalfeedback>
   </question>
   {% elif class == 'TrueFalseQuiz' %}
   <question type="truefalse">
@@ -23,6 +28,7 @@
       <feedback format="{{ config.format }}"><text>{{ quiz.feedback.get(true if val else false, '')|custom_escape }}</text></feedback>
     </answer>
     {% endfor %}
+    <generalfeedback format="{{ config.format }}"><text>{{ quiz.general_feedback|custom_escape }}</text></generalfeedback>
   </question>
   {%- endif -%}
   {%- endwith -%}

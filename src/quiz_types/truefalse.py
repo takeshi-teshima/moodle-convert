@@ -7,6 +7,7 @@ class TrueFalseQuiz:
     question: str
     answer: bool
     feedback: dict
+    general_feedback: str = ""
 
     @classmethod
     def from_parsed_yaml(cls, data: dict) -> "TrueFalseQuiz":
@@ -16,4 +17,5 @@ class TrueFalseQuiz:
             question=data["question"],
             answer=bool(data["answer"]),
             feedback=data.get("feedback", {}),
+            general_feedback=data.get("general_feedback", ""),
         )
