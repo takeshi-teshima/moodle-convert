@@ -14,7 +14,7 @@
     </answer>
     {% endfor %}
     <single>{{ 'true' if ((quiz.single is not defined) or (quiz.single is none) or quiz.single) else 'false' }}</single>
-    {%- set shuffle = quiz.shuffleanswers if (quiz.shuffleanswers is defined) and (quiz.shuffleanswers is not none) else multichoice_shuffle_default -%}
+    {% set shuffle = quiz.shuffleanswers if (quiz.shuffleanswers is defined) and (quiz.shuffleanswers is not none) else multichoice_shuffle_default -%}
     <shuffleanswers>{{ '1' if shuffle else '0' }}</shuffleanswers>
     <generalfeedback format="{{ config.format }}"><text>{{ quiz.general_feedback|custom_escape }}</text></generalfeedback>
     <answernumbering>{{ quiz.answernumbering }}</answernumbering>
