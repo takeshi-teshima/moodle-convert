@@ -1,8 +1,12 @@
 config:
   format: markdown
+  multichoice:
+    shuffleanswers: false
+    answernumbering: none
 Quizzes:
   - type: multichoice
     title: 機械学習の定義
+    default_grade: 2
     question: >
       「機械学習」の説明として適切なのはどれか。
     choices:
@@ -12,6 +16,9 @@ Quizzes:
       D: 大量の知識をルールとして手作業で登録する技術
     answer: B
     shuffleanswers: true
+    general_feedback: >
+      機械学習はデータからパターンを学習し、予測や分類を行う技術です。
+    answernumbering: ABCD
     feedback:
       A: これは計算機の性能に関する説明です。
       B: 正解です。これが機械学習の本質です。

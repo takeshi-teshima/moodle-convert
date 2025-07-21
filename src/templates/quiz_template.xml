@@ -1,4 +1,7 @@
-{%- set multichoice_shuffle_default = config.get('multichoice', {}).get('shuffle', false) -%}
+{%- set multichoice_defaults = {
+  "shuffleanswers": config.get('multichoice', {}).get('shuffle', false),
+  "answernumbering": config.get('multichoice', {}).get('answernumbering'),
+} -%}
 <?xml version="1.0" encoding="UTF-8"?>
 <quiz>
   {% for quiz in quizzes %}
@@ -6,6 +9,9 @@
   {% if class == 'MultiChoiceQuiz' %}
   <question type="multichoice">
     <name><text>{{ quiz.title|custom_escape }}</text></name>
+    {% if quiz.default_grade is defined and quiz.default_grade is not none %}
+    <defaultgrade>{{ quiz.default_grade }}</defaultgrade>
+    {% endif %}
     <questiontext format="{{ config.format }}"><text>{{ quiz.question|custom_escape }}</text></questiontext>
     {% for key, text in quiz.choices.items() %}
     <answer fraction="{{ '100' if key == quiz.answer else '0' }}">
@@ -14,10 +20,14 @@
     </answer>
     {% endfor %}
     <single>{{ 'true' if ((quiz.single is not defined) or (quiz.single is none) or quiz.single) else 'false' }}</single>
-    {% set shuffle = quiz.shuffleanswers if (quiz.shuffleanswers is defined) and (quiz.shuffleanswers is not none) else multichoice_shuffle_default -%}
+    {% set shuffle = quiz.shuffleanswers if (quiz.shuffleanswers is defined) and (quiz.shuffleanswers is not none) else multichoice_defaults["shuffleanswers"] -%}
     <shuffleanswers>{{ '1' if shuffle else '0' }}</shuffleanswers>
     <generalfeedback format="{{ config.format }}"><text>{{ quiz.general_feedback|custom_escape }}</text></generalfeedback>
+    {% if (quiz.answernumbering is defined and quiz.answernumbering is not none) -%}
     <answernumbering>{{ quiz.answernumbering }}</answernumbering>
+    {%- elif multichoice_defaults["answernumbering"] is not none -%}
+    <answernumbering>{{ multichoice_defaults["answernumbering"] }}</answernumbering>
+    {%- endif %}
   </question>
   {% elif class == 'TrueFalseQuiz' %}
   <question type="truefalse">

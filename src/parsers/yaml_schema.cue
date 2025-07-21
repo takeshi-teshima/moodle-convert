@@ -2,6 +2,7 @@
 	title!: string,
 	rubric?: string,
 	general_feedback?: string,
+	default_grade?: *1 | float | int,
 	...
 }
 

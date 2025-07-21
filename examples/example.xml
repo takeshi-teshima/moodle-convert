@@ -3,6 +3,9 @@
   
   <question type="multichoice">
     <name><text>機械学習の定義</text></name>
+    
+    <defaultgrade>2</defaultgrade>
+    
     <questiontext format="markdown"><text>「機械学習」の説明として適切なのはどれか。
 </text></questiontext>
     
@@ -28,12 +31,14 @@
     
     <single>true</single>
     <shuffleanswers>1</shuffleanswers>
-    <generalfeedback format="markdown"><text></text></generalfeedback>
-    <answernumbering>None</answernumbering>
+    <generalfeedback format="markdown"><text>機械学習はデータからパターンを学習し、予測や分類を行う技術です。
+</text></generalfeedback>
+    <answernumbering>ABCD</answernumbering>
   </question>
   
   <question type="multichoice">
     <name><text>ラベルの意味（難問）</text></name>
+    
     <questiontext format="markdown"><text>以下の学生の中で、「ラベル」の説明が唯一正しいのは誰か？
 </text></questiontext>
     
@@ -60,7 +65,7 @@
     <single>false</single>
     <shuffleanswers>0</shuffleanswers>
     <generalfeedback format="markdown"><text></text></generalfeedback>
-    <answernumbering>None</answernumbering>
+    <answernumbering>none</answernumbering>
   </question>
   
   <question type="truefalse">

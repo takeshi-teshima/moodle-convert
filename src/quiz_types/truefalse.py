@@ -7,6 +7,7 @@ class TrueFalseQuiz:
     question: str
     answer: bool
     feedback: dict
+    default_grade: float | int
     general_feedback: str = ""
 
     @classmethod
@@ -17,5 +18,6 @@ class TrueFalseQuiz:
             question=data["question"],
             answer=bool(data["answer"]),
             feedback=data.get("feedback", {}),
+            default_grade=data.get("default_grade"),
             general_feedback=data.get("general_feedback", ""),
         )

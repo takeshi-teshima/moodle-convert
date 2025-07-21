@@ -9,6 +9,7 @@ class MultiChoiceQuiz:
     choices: dict
     answer: str
     feedback: dict
+    default_grade: float | int
     general_feedback: str = ""
     shuffleanswers: bool = False
     single: bool = True
@@ -23,6 +24,7 @@ class MultiChoiceQuiz:
             choices=data["choices"],
             answer=data["answer"],
             feedback=data.get("feedback", {}),
+            default_grade=data.get("default_grade"),
             general_feedback=data.get("general_feedback"),
             shuffleanswers=data.get("shuffleanswers"),
             single=data.get("single"),
