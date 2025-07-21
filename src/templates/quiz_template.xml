@@ -14,9 +14,10 @@
     </answer>
     {% endfor %}
     <single>{{ 'true' if ((quiz.single is defined) and quiz.single) else 'false' }}</single>
-    {% set shuffle = quiz.shuffle if (quiz.shuffle is defined) and (quiz.shuffle is not none) else multichoice_shuffle_default %}
+    {%- set shuffle = quiz.shuffleanswers if (quiz.shuffleanswers is defined) and (quiz.shuffleanswers is not none) else multichoice_shuffle_default -%}
     <shuffleanswers>{{ '1' if shuffle else '0' }}</shuffleanswers>
     <generalfeedback format="{{ config.format }}"><text>{{ quiz.general_feedback|custom_escape }}</text></generalfeedback>
+    <answernumbering>{{ quiz.answernumbering }}</answernumbering>
   </question>
   {% elif class == 'TrueFalseQuiz' %}
   <question type="truefalse">

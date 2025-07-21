@@ -11,7 +11,8 @@
 	choices!: { [=~"^[A-Z]$"]: string},
 	answer!: string & or([ for k, v in choices { k } ]),
 	feedback?: { for k, v in choices { (k)?: string } },
-	shuffle?: *false | bool,
+	shuffleanswers?: *false | bool,
+	answernumbering?: *"abc" | "ABCD" | "123" | "none",
 	single?: *true | bool  // true for single choice, false for multiple choices
 }
 
@@ -31,6 +32,7 @@ Quizzes: [...(#MultiChoiceQuiz | #TrueFalseQuiz)]
 	format: "markdown" | "html" | "moodle_auto_format" | "plain_text",
 	html_escape?: *true | bool,
 	multichoice?: {
-		shuffle?: *false | bool
+		shuffleanswers?: *false | bool,
+		answernumbering?: *"abc" | "ABCD" | "123" | "none",
 	}
 }

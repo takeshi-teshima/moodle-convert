@@ -10,8 +10,9 @@ class MultiChoiceQuiz:
     answer: str
     feedback: dict
     general_feedback: str = ""
-    shuffle: bool = False
+    shuffleanswers: bool = False
     single: bool = True
+    answernumbering: str = "abc"  # one of "abc", "ABCD", "123", or "none"
 
     @classmethod
     def from_parsed_yaml(cls, data: dict) -> "MultiChoiceQuiz":
@@ -23,6 +24,7 @@ class MultiChoiceQuiz:
             answer=data["answer"],
             feedback=data.get("feedback", {}),
             general_feedback=data.get("general_feedback"),
-            shuffle=data.get("shuffle"),
+            shuffleanswers=data.get("shuffleanswers"),
             single=data.get("single"),
+            answernumbering=data.get("answernumbering"),
         )
