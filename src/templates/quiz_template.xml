@@ -32,6 +32,9 @@
   {% elif class == 'TrueFalseQuiz' %}
   <question type="truefalse">
     <name><text>{{ quiz.title|custom_escape }}</text></name>
+    {% if quiz.default_grade is defined and quiz.default_grade is not none %}
+    <defaultgrade>{{ quiz.default_grade }}</defaultgrade>
+    {% endif %}
     <questiontext format="{{ config.format }}"><text>{{ quiz.question|custom_escape }}</text></questiontext>
     {% for val in [true, false] %}
     <answer fraction="{{ '100' if val == quiz.answer else '0' }}">
